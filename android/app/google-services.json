@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "794958899134",
+    "project_id": "hero-brew-crew-bd26e",
+    "storage_bucket": "hero-brew-crew-bd26e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794958899134:android:48e5c01b57228d9d667bef",
+        "android_client_info": {
+          "package_name": "www.ndungutechcompany.com.brew_crew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiMWB1-3QkPY7azodQc0dRg00jjrnjzWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
