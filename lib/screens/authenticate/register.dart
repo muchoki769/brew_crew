@@ -26,7 +26,8 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Theme.of(context).colorScheme.surface,
+
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
@@ -47,7 +48,41 @@ class _RegisterState extends State<Register> {
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Expanded(
+                child: Image.asset(
+                "assets/mobile-shopping.png",
+                width: 150,
+                height: 150,
+                fit: BoxFit.contain,
+
+              ),
+              ),
+
+
+
+
+
+
+              // Icon(
+              //   Icons.shopping_bag,
+              //   size: 100,
+              //   color: Theme.of(context).colorScheme.inversePrimary,
+              //
+              // ),
+              const SizedBox(height: 20.0,),
+              const Text(
+                  "Minimal Shopping App",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+              ),
+              const SizedBox(height: 20.0,),
+              Text("Premium Quality Products",
+                  style:TextStyle(color: Theme.of(context).colorScheme.inversePrimary)
+              ),
               const SizedBox(height: 20.0,),
               TextFormField(
                 decoration: const InputDecoration(
@@ -101,8 +136,8 @@ class _RegisterState extends State<Register> {
                   }
                 },
                 child: const Text(
-                  'Register'
-                  // style: TextStyle(color: Colors.white),
+                  'Register',
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
               SizedBox(height: 20.0,),

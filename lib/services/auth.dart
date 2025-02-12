@@ -1,6 +1,7 @@
-import 'package:brew_crew/services/database.dart';
+import 'package:brew_crew/services/firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:brew_crew/models/user.dart';
+import 'package:flutter/material.dart';
 
 class AuthService {
 
@@ -39,7 +40,7 @@ class AuthService {
       User? user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e) {
-      print('Error signing in: $e');
+      debugPrint('Error signing in: $e');
       return null;
     }
   }
@@ -68,7 +69,7 @@ Future<UserApp?> signOut() async {
        await _auth.signOut();
        return null;
     }catch(e) {
-      print("error signing out: ${e.toString()}");
+      debugPrint("error signing out: ${e.toString()}");
       return null;
 
     }

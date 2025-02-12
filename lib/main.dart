@@ -1,5 +1,9 @@
+import 'package:brew_crew/models/shop.dart';
+import 'package:brew_crew/screens/home/cart_page.dart';
+import 'package:brew_crew/screens/home/shop_page.dart';
 import 'package:brew_crew/screens/wrapper.dart';
 import 'package:brew_crew/services/auth.dart';
+import 'package:brew_crew/theme/light_mode.dart';
 import 'package:flutter/material.dart';
 // import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,7 +18,13 @@ void main() async{
     // options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const MyApp());
+  runApp(
+      // const MyApp()
+    ChangeNotifierProvider(
+      create: (context) => Shop(),
+      child: const MyApp(),
+    )
+  );
 }
 
 
@@ -29,7 +39,15 @@ class MyApp extends StatelessWidget {
       initialData: null,
       catchError: (_, __) => null,
       child: MaterialApp(
-        home: Wrapper(),
+        debugShowCheckedModeBanner: false,
+        home: const Wrapper(),
+        theme: lightMode,
+        routes: {
+          '/wrapper': (context) => const Wrapper(),
+          '/shop_page': (context) => const ShopPage(),
+          '/cart_page': (context) => const CartPage(),
+
+        },
       
       ),
     );

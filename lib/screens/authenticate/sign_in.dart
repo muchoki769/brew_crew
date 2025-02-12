@@ -26,7 +26,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold( // ? is a tanary operator if loading is true show loading
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
@@ -47,8 +47,45 @@ class _SignInState extends State<SignIn> {
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+
+              Expanded(
+                child: Image.asset(
+                "assets/mobile-shopping.png",
+                width: 150,
+                height: 150,
+                fit: BoxFit.contain ,
+
+              ),
+              ),
+
+
+
+              // Icon(
+              //     Icons.shopping_bag,
+              //   size: 100,
+              //   color: Theme.of(context).colorScheme.inversePrimary,
+              //
+              //
+              // ),
               const SizedBox(height: 20.0,),
+
+              const Text(
+                "Minimal Shopping App",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                )
+              ),
+
+              const SizedBox(height: 20.0,),
+              Text("Premium Quality Products",
+                  style:TextStyle(color: Theme.of(context).colorScheme.inversePrimary)
+              ),
+
+              const SizedBox(height: 20.0),
+
               TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Email',
@@ -101,8 +138,8 @@ class _SignInState extends State<SignIn> {
 
                 },
                 child: const  Text(
-                    'sign in'
-                     // style: TextStyle(color: Colors.white),
+                    'sign in',
+                     style: TextStyle(color: Colors.black),
                   ),
               ),
               SizedBox(height: 20.0,),
@@ -110,6 +147,11 @@ class _SignInState extends State<SignIn> {
                 error,
                 style: TextStyle(color: Colors.red, fontSize: 14.0),
               ),
+              //other way of implementing a button
+              // MyButton(
+              //   onTap: () => Navigator.pushNamed(context, '/shop_page'),
+              //   child: const Icon(Icons.arrow_forward),
+              // ),
             ],
           ),
         ),
