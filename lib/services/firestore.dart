@@ -5,7 +5,18 @@ import 'package:flutter/material.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
 
+
 class FirestoreService {
+  //get collection of orders
+  final CollectionReference orders = FirebaseFirestore.instance.collection('orders');
+  //save to db
+  Future<void> saveOrderToDatabase(String receipt) async{
+    await orders.add({
+      'date':DateTime.now(),
+      'order': receipt,
+    });
+  }
+
   final CollectionReference notes = FirebaseFirestore.instance.collection(
       'notes');
   //create a note
@@ -35,6 +46,8 @@ Future<void> deleteNote(String docID){
 }
 
 }
+
+//brew list
 class DatabaseServices {
   final String? uid; //property
   DatabaseServices({required this.uid}) {
@@ -119,10 +132,10 @@ class DatabaseServices {
 
 // get user doc stream
   Stream<UserData?> getUserData(String uid) {
-    print("Fetching data for UID: $uid");
+    debugPrint("Fetching data for UID: $uid");
     return brewCollection.doc(uid).snapshots().map((snapshot) {
       if (snapshot.exists) {
-        print("Document data: ${snapshot.data()}");
+        debugPrint("Document data: ${snapshot.data()}");
         // int sugars = snapshot.data()!['sugars'];
         return _userDataFromSnapshot(snapshot);
       } else {
