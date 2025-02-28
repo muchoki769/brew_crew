@@ -59,7 +59,7 @@ class AuthService {
       await DatabaseServices(uid: user!.uid).updateUserData('0','new crew member',100);
       return _userFromFirebaseUser(user);
     }catch (e) {
-      print('Error registering user: $e');
+      debugPrint('Error registering user: $e');
       return null;
     }
   }

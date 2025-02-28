@@ -62,28 +62,25 @@ class _RegisterState extends State<Register> {
 
 
 
-
-
-
               // Icon(
               //   Icons.shopping_bag,
               //   size: 100,
               //   color: Theme.of(context).colorScheme.inversePrimary,
               //
               // ),
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 10.0),
               const Text(
-                  "Minimal Shopping App",
+                  "Sunrise Shopping Mall",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
               ),
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0),
               Text("Premium Quality Products",
                   style:TextStyle(color: Theme.of(context).colorScheme.inversePrimary)
               ),
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0),
               TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Email',
@@ -99,7 +96,7 @@ class _RegisterState extends State<Register> {
                 },
 
               ),
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0),
               TextFormField(
                 decoration: const InputDecoration(
                     labelText: 'Password',
@@ -114,7 +111,7 @@ class _RegisterState extends State<Register> {
                   setState(() => password = val);
                 },
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(height: 20.0),
               ElevatedButton(
                 // color: Colors.orange[400],
                 onPressed: () async {
@@ -140,7 +137,7 @@ class _RegisterState extends State<Register> {
                   style: TextStyle(color: Colors.black),
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(height: 20.0),
               Text(
                 error,
                 style: TextStyle(color: Colors.red, fontSize: 14.0),

@@ -1,8 +1,11 @@
 import 'package:brew_crew/components/my_drawer.dart';
 import 'package:brew_crew/components/my_product_tile.dart';
+import 'package:brew_crew/components/my_sliver_app_bar.dart';
 import 'package:brew_crew/models/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+
 
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
@@ -14,7 +17,7 @@ class ShopPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        elevation: 0.0,
+        elevation: 10.0,
         centerTitle: true,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Shop page'),
@@ -26,18 +29,30 @@ class ShopPage extends StatelessWidget {
           ],
 
       ),
-      drawer: MyDrawer(),
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      // drawer: MyDrawer(),
+
+      // backgroundColor: Theme.of(context).colorScheme.surface,
+      //
+      // body:NestedScrollView(
+      //   headerSliverBuilder: (BuildContext context , bool innerBoxIsScrolled) => [
+      //     MySliverAppBar(
+      //       child: Text('Hello'),
+      //     title: Text('title'),
+      //     ),
+      //
+      //   ],
+      //   body: Container(color: Colors.indigo,)
+      // ),
 
       body: ListView(
         children: [
           const SizedBox(height: 25.0),
           Center(
             child: Text(
-              'Products',
+              'Groceries',
               // style: Theme.of(context).textTheme.headlineMedium,
               style: TextStyle (
-                  color:Theme.of(context).colorScheme.inversePrimary
+                  color:Theme.of(context).colorScheme.inversePrimary,
               ),
             ),
           ),
@@ -58,6 +73,7 @@ class ShopPage extends StatelessWidget {
         ),
       ],
       ),
+
     );
   }
 }

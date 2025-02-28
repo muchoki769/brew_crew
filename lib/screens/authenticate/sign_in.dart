@@ -72,7 +72,7 @@ class _SignInState extends State<SignIn> {
               const SizedBox(height: 20.0,),
 
               const Text(
-                "Minimal Shopping App",
+                "Sunrise Shopping Mall",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -88,6 +88,7 @@ class _SignInState extends State<SignIn> {
 
               TextFormField(
                 decoration: const InputDecoration(
+                  // hintText: 'Email',
                   labelText: 'Email',
                   border: OutlineInputBorder(),
                 ),

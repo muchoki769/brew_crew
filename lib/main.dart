@@ -1,9 +1,11 @@
+import 'package:brew_crew/models/restaurant.dart';
 import 'package:brew_crew/models/shop.dart';
 import 'package:brew_crew/screens/home/cart_page.dart';
+import 'package:brew_crew/screens/home/settings.dart';
 import 'package:brew_crew/screens/home/shop_page.dart';
 import 'package:brew_crew/screens/wrapper.dart';
 import 'package:brew_crew/services/auth.dart';
-import 'package:brew_crew/theme/light_mode.dart';
+import 'package:brew_crew/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 // import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,9 +22,17 @@ void main() async{
 
   runApp(
       // const MyApp()
-    ChangeNotifierProvider(
-      create: (context) => Shop(),
+    MultiProvider(
+        providers: [
+     ChangeNotifierProvider( create: (context) => Shop()),
+
+     ChangeNotifierProvider( create: (context) => ThemeProvider()),
+
+     ChangeNotifierProvider(create: (context) => Restaurant()),
+
+      ],
       child: const MyApp(),
+
     )
   );
 }
@@ -41,11 +51,12 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: const Wrapper(),
-        theme: lightMode,
+        theme: Provider.of<ThemeProvider>(context).themeData,
         routes: {
           '/wrapper': (context) => const Wrapper(),
           '/shop_page': (context) => const ShopPage(),
           '/cart_page': (context) => const CartPage(),
+          '/settings': (context) => const Settings(),
 
         },
       

@@ -44,7 +44,7 @@ class MyProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.tertiary,
         borderRadius: BorderRadius.circular(12.0),
       ),
       margin: const EdgeInsets.all(12.0),
